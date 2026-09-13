@@ -1,0 +1,55 @@
+<article class="card-vaga">
+    <div class="topo-card">
+        <img class="logo-empresa" [src]="vaga.imagem" [alt]="'Logotipo da empresa ' + vaga.empresa">
+        <div class="identificacao">
+            <p class="empresa">{{ vaga.empresa }}</p>
+            <h3>{{ vaga.cargo }}</h3>
+            <p class="localizacao">
+                {{ vaga.localizacao }} - {{ vaga.modalidade }}
+            </p>
+        </div>
+
+        <button class="botao-favorito"
+        [class.favorita]="favorita"
+        [title]="favorita ? 'Remover dos favoritos' : 'Adicionar aos favoritos'"
+        (click)="alterarFavorito()">
+        @if(favorita){
+            🌟
+        } @else {
+            ⭐
+        }
+        </button>
+    </div>
+    <div class="etiquetas">
+        @if (vaga.aberta){
+            <span class="situacao aberta">Vaga aberta</span>
+        } @else {
+            <span class="situacao encerrada">Vaga encerrada</span>
+        }
+
+        @if(vaga.urgente){
+            <span class="situacao urgente">Contratação urgente</span>
+        }
+
+        @if (favorita){
+            <span class="situacao favorita">Favorita</span>
+        }
+    </div>
+    <div class="informacoes">
+        <div class="informacao">
+            <span class="rotulo">Salário</span>
+            @if(vaga.salario > 0){
+                <strong>R$ {{ vaga.salario.toLocaleString('pt=BR') }}</strong>
+            }@else {
+                <strong>Valor inbox</strong>
+            }
+        </div>
+        <div class="informacao">
+            <span class="rotulo">Modalidade</span>
+            <strong>{{ vaga.modalidade }}</strong>
+        </div>
+    </div>
+    <p class="descricao">
+        {{ vaga.descricao }}
+    </p>
+</article>
