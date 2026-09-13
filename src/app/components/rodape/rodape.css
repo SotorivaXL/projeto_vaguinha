@@ -1,10 +1,29 @@
-.rodape{
-    padding: 30px 20px;
-    color: #cdb5e1;
-    background-color: #0f172a;
-    text-align: center;
+.rodape {
+  padding: 42px 20px;
+  color: #c9aeb7;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: #350816;
+  text-align: center;
 }
 
-.rodape p{
-    margin: 6px 0;
+.marca-rodape {
+  color: #fff;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.marca-rodape span {
+  color: #f6c23e;
+}
+
+.rodape p {
+  margin: 8px 0;
+}
+
+.rodape .direitos {
+  margin-top: 20px;
+  color: #9f7d88;
+  font-size: 0.76rem;
 }
