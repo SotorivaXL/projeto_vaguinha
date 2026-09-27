@@ -1,3 +1,109 @@
 <app-cabecalho></app-cabecalho>
-<br>
+
+<main id="inicio">
+  <section class="hero" aria-labelledby="titulo-principal">
+    <div class="hero-conteudo">
+      <p class="sobretitulo">Talento e oportunidade no mesmo lugar</p>
+      <h1 id="titulo-principal">{{ titulo }}</h1>
+      <p class="hero-texto">
+        Descubra empresas que combinam com você e encontre oportunidades para transformar seu futuro.
+      </p>
+
+      <div class="acoes-hero">
+        <a class="botao botao-primario" href="#vagas">Explorar {{ totalVagasAbertas }} vagas</a>
+        <button class="botao botao-secundario" type="button" (click)="alterarLogin()">
+          @if (usuarioLogado) {
+            Sair da conta
+          } @else {
+            Entrar como candidato
+          }
+        </button>
+      </div>
+
+      @if (usuarioLogado) {
+        <p class="mensagem-usuario sucesso">Olá, {{ nomeUsuario }}! Seu perfil está pronto para novas oportunidades.</p>
+      } @else {
+        <p class="mensagem-usuario aviso">Você está navegando como {{ nomeUsuario }}. Entre para acompanhar candidaturas.</p>
+      }
+    </div>
+
+    <aside class="painel-hero" aria-label="Resumo de oportunidades">
+      <span class="selo">Novas oportunidades</span>
+      <p class="numero-destaque">{{ totalVagasAbertas }}</p>
+      <p>vagas abertas esperando pelo seu talento</p>
+      <div class="mini-estatisticas">
+        <span><strong>3</strong> modalidades</span>
+        <span><strong>{{ vagas.length }}</strong> empresas</span>
+      </div>
+    </aside>
+  </section>
+
+  <section class="secao-vagas" id="vagas" aria-labelledby="titulo-vagas">
+    <div class="cabecalho-secao">
+      <div>
+        <p class="sobretitulo">Oportunidades selecionadas</p>
+        <h2 id="titulo-vagas">Vagas em destaque</h2>
+        <p>Use os filtros para encontrar uma vaga que combine com a sua rotina.</p>
+      </div>
+      <button
+        class="botao-filtro-favoritas"
+        type="button"
+        [class.ativo]="somenteFavoritas"
+        (click)="alternarFiltroFavoritas()"
+      >
+        <span aria-hidden="true">★</span>
+        {{ somenteFavoritas ? 'Mostrar todas' : 'Ver favoritas' }}
+        @if (vagasFavoritas.size > 0) {
+          <span class="contador">{{ vagasFavoritas.size }}</span>
+        }
+      </button>
+    </div>
+
+    <nav class="filtros" aria-label="Filtrar vagas por modalidade">
+      @for (modalidade of modalidades; track modalidade) {
+        <button
+          type="button"
+          [class.ativo]="filtroModalidade === modalidade"
+          (click)="selecionarModalidade(modalidade)"
+        >
+          {{ modalidade }}
+        </button>
+      }
+    </nav>
+
+    @if (vagasExibidas.length > 0) {
+      <div class="grade-vagas">
+        @for (vaga of vagasExibidas; track vaga.id) {
+          <app-card-vaga
+            [vaga]="vaga"
+            [favorita]="vagasFavoritas.has(vaga.id)"
+            (favoritaAlterada)="atualizarFavorita($event)"
+          ></app-card-vaga>
+        }
+      </div>
+    } @else {
+      <div class="estado-vazio">
+        <span aria-hidden="true">☆</span>
+        <h3>Nenhuma vaga encontrada</h3>
+        <p>Você ainda não favoritou vagas nessa modalidade.</p>
+        <button class="botao botao-primario" type="button" (click)="alternarFiltroFavoritas()">
+          Ver todas as vagas
+        </button>
+      </div>
+    }
+  </section>
+
+  <section class="secao-sobre" id="sobre" aria-labelledby="titulo-sobre">
+    <div>
+      <p class="sobretitulo">Sobre o Vaguinha</p>
+      <h2 id="titulo-sobre">Conexões que abrem caminhos</h2>
+    </div>
+    <p>
+      O Vaguinha aproxima profissionais e empresas por meio de uma experiência simples, acolhedora e transparente.
+      Aqui, cada oportunidade pode ser o começo de uma grande história.
+    </p>
+    <a href="mailto:contato@vaguinha.com.br">Fale com a nossa equipe <span aria-hidden="true">→</span></a>
+  </section>
+</main>
+
 <app-rodape></app-rodape>

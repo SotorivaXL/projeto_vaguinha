@@ -1,0 +1,270 @@
+.card-vaga {
+  height: 100%;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #eadde1;
+  border-radius: 16px;
+  background-color: #fff;
+  box-shadow: 0 7px 24px rgba(67, 24, 38, 0.06);
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+
+.card-vaga:hover {
+  border-color: #d4b0bb;
+  box-shadow: 0 16px 34px rgba(77, 13, 34, 0.11);
+  transform: translateY(-4px);
+}
+
+.topo-card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: start;
+  gap: 16px;
+}
+
+.logo-empresa {
+  width: 58px;
+  height: 58px;
+  border: 1px solid #eee3e6;
+  border-radius: 13px;
+  object-fit: cover;
+}
+
+.identificacao {
+  min-width: 0;
+}
+
+.empresa {
+  margin: 0 0 5px;
+  color: #8a6b75;
+  font-size: 0.78rem;
+}
+
+.identificacao h3 {
+  margin: 0;
+  color: #34121d;
+  font-size: 1.2rem;
+  line-height: 1.3;
+}
+
+.localizacao {
+  margin: 8px 0 0;
+  color: #7a696f;
+  font-size: 0.84rem;
+}
+
+.localizacao span {
+  color: #a7284e;
+}
+
+.botao-favorito {
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  color: #a17c16;
+  border: 1px solid #eadbb1;
+  border-radius: 50%;
+  background-color: #fffaf0;
+  font-size: 1.45rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.botao-favorito:hover,
+.botao-favorito.favorita {
+  color: #6b1831;
+  background-color: #f6c23e;
+  transform: scale(1.08) rotate(-5deg);
+}
+
+.etiquetas {
+  min-height: 27px;
+  margin-top: 22px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.situacao {
+  padding: 6px 9px;
+  border-radius: 5px;
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.situacao i {
+  width: 6px;
+  height: 6px;
+  margin-right: 3px;
+  display: inline-block;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.situacao.aberta {
+  color: #427036;
+  background-color: #eef7ea;
+}
+
+.situacao.encerrada {
+  color: #805b62;
+  background-color: #f2eaec;
+}
+
+.situacao.urgente {
+  color: #735209;
+  background-color: #fff1c2;
+}
+
+.situacao.favorita {
+  color: #7a1835;
+  background-color: #f7e8ed;
+}
+
+.descricao {
+  margin: 20px 0;
+  color: #6b5c61;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.informacoes {
+  padding: 17px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  border-top: 1px solid #eee4e7;
+  border-bottom: 1px solid #eee4e7;
+}
+
+.informacao {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.informacao + .informacao {
+  padding-left: 16px;
+  border-left: 1px solid #eee4e7;
+}
+
+.rotulo {
+  color: #98858b;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.informacao strong {
+  color: #4c1a2a;
+  font-size: 0.92rem;
+}
+
+.detalhes {
+  margin-top: 18px;
+  padding: 18px;
+  border-left: 3px solid #f6c23e;
+  border-radius: 4px 8px 8px 4px;
+  background: #fffaf0;
+}
+
+.detalhes h4 {
+  margin: 0 0 10px;
+  color: #541127;
+  font-size: 0.88rem;
+}
+
+.detalhes ul {
+  margin: 0;
+  padding-left: 18px;
+  color: #6b5c61;
+  font-size: 0.83rem;
+  line-height: 1.8;
+}
+
+.mensagem-candidatura {
+  margin: 16px 0 0;
+  padding: 10px 12px;
+  color: #315a28;
+  border-radius: 6px;
+  background-color: #edf6e9;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.acoes-card {
+  margin-top: auto;
+  padding-top: 22px;
+  display: flex;
+  gap: 10px;
+}
+
+.acoes-card button {
+  min-height: 44px;
+  padding: 0 15px;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.acoes-card button:not(:disabled):hover {
+  transform: translateY(-2px);
+}
+
+.botao-detalhes {
+  color: #6b1831;
+  border: 1px solid #d9bec6;
+  background-color: #fff;
+}
+
+.botao-detalhes:hover {
+  background-color: #fff8e5;
+}
+
+.botao-candidatar {
+  flex: 1;
+  color: #fff;
+  border: 1px solid #7a1835;
+  background-color: #7a1835;
+}
+
+.botao-candidatar:hover:not(:disabled) {
+  background-color: #5d1028;
+}
+
+.botao-candidatar:disabled {
+  color: #9b8e92;
+  border-color: #e1d8da;
+  background-color: #eee9ea;
+  cursor: not-allowed;
+}
+
+@media (max-width: 520px) {
+  .card-vaga {
+    padding: 20px;
+  }
+
+  .topo-card {
+    grid-template-columns: auto 1fr;
+  }
+
+  .botao-favorito {
+    position: absolute;
+    justify-self: end;
+  }
+
+  .identificacao {
+    padding-right: 36px;
+  }
+
+  .acoes-card {
+    flex-direction: column;
+  }
+}

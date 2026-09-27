@@ -1,21 +1,22 @@
 .rodape {
   padding: 42px 20px;
-  color: #c9aeb7;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  background-color: #350816;
+  color: #94a3b8;
+  border-top: 1px solid rgba(74, 222, 128, 0.18);
+  background-color: #090c18;
   text-align: center;
 }
 
 .marca-rodape {
   color: #fff;
-  font-family: Georgia, 'Times New Roman', serif;
   font-size: 1.5rem;
-  font-weight: 800;
+  font-weight: 900;
+  letter-spacing: -0.05em;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 .marca-rodape span {
-  color: #f6c23e;
+  color: #4ade80;
 }
 
 .rodape p {
@@ -24,6 +25,6 @@
 
 .rodape .direitos {
   margin-top: 20px;
-  color: #9f7d88;
+  color: #64748b;
   font-size: 0.76rem;
 }

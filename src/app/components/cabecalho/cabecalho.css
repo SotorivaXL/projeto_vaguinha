@@ -3,9 +3,9 @@
   z-index: 20;
   top: 0;
   padding: 15px 24px;
-  border-bottom: 1px solid #eadde1;
-  background-color: rgba(255, 255, 255, 0.96);
-  box-shadow: 0 8px 30px rgba(75, 18, 36, 0.06);
+  border-bottom: 1px solid rgba(74, 222, 128, 0.2);
+  background-color: rgba(9, 12, 24, 0.96);
+  box-shadow: 0 8px 30px rgba(2, 6, 23, 0.28);
   backdrop-filter: blur(12px);
 }
 
@@ -22,33 +22,35 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #4f0d22;
+  color: #f8fafc;
   text-decoration: none;
 }
 
 .icone-marca {
-  width: 38px;
+  min-width: 42px;
   height: 38px;
+  padding: 0 8px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #4f0d22;
-  border-radius: 12px 4px 12px 4px;
-  background-color: #f6c23e;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.45rem;
+  color: #07130c;
+  border-radius: 6px 14px 6px 14px;
+  background: linear-gradient(135deg, #4ade80, #22d3ee);
+  font-size: 0.86rem;
   font-weight: 900;
+  letter-spacing: -0.04em;
+  transform: skewX(-6deg);
 }
 
 .nome-marca {
-  font-family: Georgia, 'Times New Roman', serif;
   font-size: 1.42rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
 }
 
 .nome-marca span {
-  color: #d29e12;
+  color: #4ade80;
 }
 
 .menu {
@@ -60,7 +62,7 @@
 .menu a {
   position: relative;
   padding: 10px 0;
-  color: #5b4a50;
+  color: #cbd5e1;
   font-size: 0.9rem;
   font-weight: 700;
   text-decoration: none;
@@ -74,13 +76,13 @@
   bottom: 4px;
   left: 0;
   height: 2px;
-  background-color: #f6c23e;
+  background: linear-gradient(90deg, #4ade80, #22d3ee);
   transform: scaleX(0);
   transition: transform 0.2s;
 }
 
 .menu a:hover {
-  color: #7a1835;
+  color: #fff;
 }
 
 .menu a:hover::after {
@@ -89,17 +91,17 @@
 
 .botao-cabecalho {
   padding: 11px 17px;
-  color: #fff;
+  color: #07130c;
   border-radius: 8px;
-  background-color: #7a1835;
+  background: linear-gradient(135deg, #4ade80, #22d3ee);
   font-size: 0.85rem;
-  font-weight: 800;
+  font-weight: 700;
   text-decoration: none;
   transition: background-color 0.2s, transform 0.2s;
 }
 
 .botao-cabecalho:hover {
-  background-color: #5d1028;
+  box-shadow: 0 8px 24px rgba(34, 211, 238, 0.22);
   transform: translateY(-2px);
 }
 
