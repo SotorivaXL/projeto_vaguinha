@@ -1,0 +1,81 @@
+<article class="card-partida">
+  <header class="topo-card">
+    <p>{{ partida.rodada }}</p>
+    <p
+      class="situacao"
+      [class.ao-vivo]="partida.situacao === 'Ao vivo'"
+      [class.encerrada]="partida.situacao === 'Encerrada'"
+    >
+      <span aria-hidden="true"></span>{{ partida.situacao }}
+    </p>
+  </header>
+
+  <div class="confronto">
+    <div class="equipe">
+      <img [src]="partida.equipeA.imagem" [alt]="'Escudo da equipe ' + partida.equipeA.nome" />
+      <strong>{{ partida.equipeA.nome }}</strong>
+    </div>
+
+    <div class="placar">
+      @if (partida.placarA !== null && partida.placarB !== null) {
+        <strong>{{ partida.placarA }} <span>×</span> {{ partida.placarB }}</strong>
+      } @else {
+        <strong>×</strong>
+      }
+      <time [attr.datetime]="partida.dataIso">{{ partida.data }} · {{ partida.horario }}</time>
+    </div>
+
+    <div class="equipe">
+      <img [src]="partida.equipeB.imagem" [alt]="'Escudo da equipe ' + partida.equipeB.nome" />
+      <strong>{{ partida.equipeB.nome }}</strong>
+    </div>
+  </div>
+
+  <p class="descricao">{{ partida.descricao }}</p>
+
+  @if (detalhesVisiveis) {
+    <section class="detalhes" aria-label="Detalhes da partida">
+      <div>
+        <h4>Formato</h4>
+        <p>{{ partida.formato }}</p>
+      </div>
+      <div>
+        <h4>Mapas</h4>
+        <p>{{ partida.mapas.join(', ') }}</p>
+      </div>
+    </section>
+  }
+
+  @if (palpiteConfirmado) {
+    <p class="mensagem-sucesso" role="status">Seu palpite foi registrado para esta partida.</p>
+  }
+
+  <div class="acoes-card">
+    <button class="botao-secundario" type="button" (click)="alterarDetalhes()">
+      {{ detalhesVisiveis ? 'Ocultar detalhes' : 'Ver detalhes' }}
+    </button>
+    <button
+      class="botao-acompanhar"
+      type="button"
+      [class.ativo]="acompanhada"
+      [attr.aria-pressed]="acompanhada"
+      (click)="alterarAcompanhamento()"
+    >
+      {{ acompanhada ? 'Acompanhando' : 'Acompanhar' }}
+    </button>
+    <button
+      class="botao-palpite"
+      type="button"
+      [disabled]="partida.situacao === 'Encerrada' || palpiteConfirmado"
+      (click)="confirmarPalpite()"
+    >
+      @if (palpiteConfirmado) {
+        Palpite registrado
+      } @else if (partida.situacao === 'Encerrada') {
+        Partida encerrada
+      } @else {
+        Dar palpite
+      }
+    </button>
+  </div>
+</article>

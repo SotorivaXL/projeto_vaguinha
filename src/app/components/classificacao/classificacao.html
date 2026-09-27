@@ -1,0 +1,38 @@
+<section class="classificacao" id="classificacao" aria-labelledby="titulo-classificacao">
+  <div class="cabecalho-classificacao">
+    <h2 id="titulo-classificacao">Classificação geral</h2>
+    <p>A pontuação é atualizada após o encerramento de cada confronto.</p>
+  </div>
+
+  <div class="tabela-responsiva">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Posição</th>
+          <th scope="col">Equipe</th>
+          <th scope="col">Pontos</th>
+          <th scope="col">Vitórias</th>
+          <th scope="col">Derrotas</th>
+          <th scope="col">Saldo</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of posicoes; track item.equipe.sigla) {
+          <tr [class.lider]="item.posicao === 1">
+            <td class="posicao">{{ item.posicao }}º</td>
+            <td class="equipe-tabela">
+              <img [src]="item.equipe.imagem" [alt]="'Escudo da equipe ' + item.equipe.nome" />
+              <span>{{ item.equipe.nome }}</span>
+            </td>
+            <td>
+              <strong>{{ item.pontos }}</strong>
+            </td>
+            <td>{{ item.vitorias }}</td>
+            <td>{{ item.derrotas }}</td>
+            <td>{{ item.saldoRounds > 0 ? '+' : '' }}{{ item.saldoRounds }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</section>

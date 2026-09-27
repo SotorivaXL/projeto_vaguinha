@@ -97,7 +97,9 @@
   font-size: 0.85rem;
   font-weight: 700;
   text-decoration: none;
-  transition: background-color 0.2s, transform 0.2s;
+  transition:
+    background-color 0.2s,
+    transform 0.2s;
 }
 
 .botao-cabecalho:hover {
@@ -107,7 +109,7 @@
 
 @media (max-width: 700px) {
   .menu {
-    gap: 18px;
+    display: none;
   }
 
   .botao-cabecalho {
@@ -118,9 +120,5 @@
 @media (max-width: 480px) {
   .cabecalho {
     padding-inline: 16px;
-  }
-
-  .menu a:first-child {
-    display: none;
   }
 }

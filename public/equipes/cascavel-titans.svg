@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+  <path fill="#4ade80" d="M40 3 72 15v24c0 19-13 31-32 38C21 70 8 58 8 39V15z"/>
+  <path fill="#0b1020" d="M40 13 62 21v17c0 13-8 22-22 28-14-6-22-15-22-28V21z"/>
+  <text x="40" y="48" fill="#f8fafc" font-family="Arial,sans-serif" font-size="23" font-weight="900" text-anchor="middle">CT</text>
+</svg>

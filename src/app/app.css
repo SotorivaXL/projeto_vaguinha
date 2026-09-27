@@ -4,46 +4,50 @@
 
 main {
   overflow: hidden;
+  color: #dbe4ef;
+  background: #0b1020;
 }
 
 .hero {
-  min-height: 620px;
-  padding: 88px max(24px, calc((100vw - 1180px) / 2));
+  min-height: 650px;
+  padding: 92px max(24px, calc((100vw - 1180px) / 2));
   display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
   align-items: center;
-  gap: 80px;
+  gap: 76px;
   background:
-    radial-gradient(circle at 88% 18%, rgba(246, 194, 62, 0.18), transparent 24%),
-    linear-gradient(160deg, #fffaf0 0%, #fff 62%);
+    linear-gradient(rgba(5, 9, 20, 0.82), rgba(5, 9, 20, 0.96)),
+    repeating-linear-gradient(135deg, transparent 0 42px, rgba(74, 222, 128, 0.05) 42px 43px),
+    #080d19;
 }
 
 .hero-conteudo {
-  max-width: 710px;
-}
-
-.sobretitulo {
-  margin: 0 0 14px;
-  color: #7a1835;
-  font-size: 0.95rem;
-  font-weight: 800;
+  max-width: 720px;
 }
 
 .hero h1 {
   margin: 0;
-  color: #2d1019;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(2.8rem, 5.8vw, 5.25rem);
-  line-height: 0.98;
-  letter-spacing: -0.045em;
+  color: #f8fafc;
+  font-size: clamp(3rem, 6vw, 5.6rem);
+  line-height: 0.96;
+  letter-spacing: -0.055em;
+}
+
+.hero h1::after {
+  content: '';
+  width: 90px;
+  height: 6px;
+  margin-top: 28px;
+  display: block;
+  background: linear-gradient(90deg, #4ade80, #22d3ee);
 }
 
 .hero-texto {
-  max-width: 630px;
-  margin: 28px 0 0;
-  color: #66565b;
-  font-size: 1.12rem;
-  line-height: 1.8;
+  max-width: 650px;
+  margin: 26px 0 0;
+  color: #b6c2d2;
+  font-size: 1.08rem;
+  line-height: 1.75;
 }
 
 .acoes-hero {
@@ -60,12 +64,15 @@ main {
   align-items: center;
   justify-content: center;
   border: 1px solid transparent;
-  border-radius: 10px;
+  border-radius: 6px;
   font: inherit;
   font-weight: 800;
   text-decoration: none;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+  transition:
+    border-color 0.2s,
+    background-color 0.2s,
+    transform 0.2s;
 }
 
 .botao:hover {
@@ -73,25 +80,22 @@ main {
 }
 
 .botao-primario {
-  color: #fff;
-  background-color: #7a1835;
-  box-shadow: 0 10px 24px rgba(122, 24, 53, 0.24);
+  color: #07130c;
+  background: #4ade80;
 }
 
 .botao-primario:hover {
-  background-color: #5d1028;
-  box-shadow: 0 14px 28px rgba(122, 24, 53, 0.3);
+  background: #86efac;
 }
 
 .botao-secundario {
-  color: #60142b;
-  border-color: #d9bcc5;
-  background-color: #fff;
+  color: #e2e8f0;
+  border-color: #334155;
+  background: #111827;
 }
 
 .botao-secundario:hover {
-  border-color: #7a1835;
-  background-color: #fff8e5;
+  border-color: #22d3ee;
 }
 
 .mensagem-usuario {
@@ -99,103 +103,100 @@ main {
   margin: 22px 0 0;
   padding: 10px 14px;
   border-left: 4px solid;
-  border-radius: 4px 8px 8px 4px;
-  font-size: 0.88rem;
+  font-size: 0.86rem;
 }
 
 .mensagem-usuario.sucesso {
-  color: #315a28;
-  border-color: #6d963f;
-  background-color: #f0f7e9;
+  color: #bbf7d0;
+  border-color: #4ade80;
+  background: #10251a;
 }
 
 .mensagem-usuario.aviso {
-  color: #684b08;
-  border-color: #d9a91c;
-  background-color: #fff6d8;
+  color: #fde68a;
+  border-color: #fbbf24;
+  background: #29200d;
 }
 
-.painel-hero {
+.proxima-partida {
   position: relative;
-  min-height: 360px;
-  padding: 42px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  color: #fff;
-  border-radius: 32px 8px 32px 8px;
-  background: linear-gradient(145deg, #861f3f, #4f0d22);
-  box-shadow: 28px 28px 0 #f6c23e, 0 24px 50px rgba(82, 18, 38, 0.2);
+  padding: 36px;
+  border: 1px solid #334155;
+  background: #111827;
+  box-shadow: 18px 18px 0 #172033;
 }
 
-.painel-hero::before {
-  content: '↗';
+.proxima-partida::before {
+  content: '';
   position: absolute;
-  top: 30px;
-  right: 34px;
-  color: #f6c23e;
-  font-size: 4rem;
-  font-weight: 200;
+  top: -1px;
+  right: -1px;
+  width: 72px;
+  height: 5px;
+  background: #4ade80;
 }
 
-.selo {
-  position: absolute;
-  top: 34px;
-  left: 36px;
-  padding: 8px 12px;
-  color: #4d0c20;
-  border-radius: 999px;
-  background-color: #f6c23e;
-  font-size: 0.74rem;
-  font-weight: 900;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.numero-destaque {
+.proxima-partida h2 {
   margin: 0;
-  color: #f6c23e;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 7.5rem;
-  font-weight: 800;
-  line-height: 0.9;
+  color: #fff;
+  font-size: 1.5rem;
 }
 
-.painel-hero > p:not(.numero-destaque) {
-  max-width: 250px;
-  margin: 14px 0 26px;
-  color: #f5e7eb;
-  font-size: 1.08rem;
-  line-height: 1.5;
+.proxima-partida time {
+  margin-top: 8px;
+  display: block;
+  color: #94a3b8;
+  font-size: 0.86rem;
 }
 
-.mini-estatisticas {
-  padding-top: 22px;
-  display: flex;
-  gap: 32px;
-  border-top: 1px solid rgba(255, 255, 255, 0.18);
-  color: #dfc7ce;
-  font-size: 0.82rem;
+.confronto-destaque {
+  margin: 32px 0 22px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 20px;
 }
 
-.mini-estatisticas span {
+.confronto-destaque > div {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 8px;
 }
 
-.mini-estatisticas strong {
+.confronto-destaque img {
+  width: 88px;
+  height: 88px;
+}
+
+.confronto-destaque strong {
   color: #fff;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
 }
 
-.secao-vagas {
-  padding: 96px max(24px, calc((100vw - 1180px) / 2));
-  background-color: #f8f3f1;
+.confronto-destaque > span {
+  color: #4ade80;
+  font-size: 1.8rem;
+}
+
+.proxima-partida > p {
+  margin: 0;
+  color: #cbd5e1;
+  text-align: center;
+}
+
+.secao-partidas,
+.secao-equipes {
+  padding: 88px max(24px, calc((100vw - 1180px) / 2));
+}
+
+.secao-partidas {
+  background: #e8edf3;
 }
 
 .cabecalho-secao {
   display: flex;
-  align-items: flex-end;
+  align-items: end;
   justify-content: space-between;
   gap: 32px;
 }
@@ -203,53 +204,39 @@ main {
 .cabecalho-secao h2,
 .secao-sobre h2 {
   margin: 0;
-  color: #35141f;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(2rem, 4vw, 3.25rem);
-  letter-spacing: -0.03em;
+  color: #101827;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  letter-spacing: -0.04em;
 }
 
-.cabecalho-secao > div > p:last-child {
+.cabecalho-secao > div > p {
+  max-width: 680px;
   margin: 12px 0 0;
-  color: #73656a;
+  color: #526176;
+  line-height: 1.65;
 }
 
-.botao-filtro-favoritas {
+.botao-filtro-acompanhadas {
   padding: 11px 16px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: #6c1932;
-  border: 1px solid #d8bec6;
-  border-radius: 999px;
-  background: #fff;
+  color: #172033;
+  border: 1px solid #9eacbd;
+  border-radius: 6px;
+  background: transparent;
   font: inherit;
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   font-weight: 800;
   cursor: pointer;
 }
 
-.botao-filtro-favoritas:hover,
-.botao-filtro-favoritas.ativo {
-  color: #35141f;
-  border-color: #e1b12a;
-  background-color: #f6c23e;
-}
-
-.contador {
-  min-width: 22px;
-  height: 22px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  border-radius: 50%;
-  background-color: #7a1835;
-  font-size: 0.72rem;
+.botao-filtro-acompanhadas:hover,
+.botao-filtro-acompanhadas.ativo {
+  color: #07130c;
+  border-color: #4ade80;
+  background: #4ade80;
 }
 
 .filtros {
-  margin: 42px 0 30px;
+  margin: 38px 0 28px;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -257,9 +244,9 @@ main {
 
 .filtros button {
   padding: 10px 18px;
-  color: #65575c;
-  border: 1px solid transparent;
-  border-radius: 8px;
+  color: #425066;
+  border: 1px solid #bdc8d5;
+  border-radius: 4px;
   background: transparent;
   font: inherit;
   font-weight: 700;
@@ -267,108 +254,165 @@ main {
 }
 
 .filtros button:hover {
-  color: #7a1835;
-  background-color: #fff;
+  border-color: #172033;
 }
 
 .filtros button.ativo {
   color: #fff;
-  background-color: #7a1835;
+  border-color: #111827;
+  background: #111827;
 }
 
-.grade-vagas {
+.grade-partidas {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 22px;
+  gap: 20px;
 }
 
 .estado-vazio {
-  padding: 70px 24px;
-  color: #6c5e63;
-  border: 1px dashed #d8bec6;
-  border-radius: 18px;
-  background: #fff;
+  padding: 64px 24px;
+  color: #526176;
+  border: 1px dashed #8c9caf;
+  background: #f8fafc;
   text-align: center;
 }
 
-.estado-vazio > span {
-  color: #d19b08;
-  font-size: 3.5rem;
-}
-
 .estado-vazio h3 {
-  margin: 14px 0 0;
-  color: #35141f;
-  font-size: 1.4rem;
+  margin: 0;
+  color: #111827;
+  font-size: 1.35rem;
 }
 
 .estado-vazio p {
   margin: 8px 0 24px;
 }
 
-.secao-sobre {
-  padding: 78px max(24px, calc((100vw - 1180px) / 2));
-  display: grid;
-  grid-template-columns: 1fr 1fr auto;
-  align-items: end;
-  gap: 56px;
-  color: #f8eaf0;
-  background-color: #4f0d22;
+.secao-equipes {
+  color: #dbe4ef;
+  background: #111827;
 }
 
-.secao-sobre .sobretitulo {
-  color: #f6c23e;
+.secao-equipes .cabecalho-secao h2 {
+  color: #fff;
+}
+
+.secao-equipes .cabecalho-secao p {
+  color: #94a3b8;
+}
+
+.grade-equipes {
+  margin-top: 36px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.equipe-resumo {
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid #2b384e;
+  background: #0d1423;
+  transition:
+    border-color 0.2s,
+    transform 0.2s;
+}
+
+.equipe-resumo:hover {
+  border-color: #22d3ee;
+  transform: translateY(-2px);
+}
+
+.equipe-resumo img {
+  width: 58px;
+  height: 58px;
+}
+
+.equipe-resumo h3,
+.equipe-resumo p {
+  margin: 0;
+}
+
+.equipe-resumo h3 {
+  color: #fff;
+  font-size: 1rem;
+}
+
+.equipe-resumo p {
+  margin-top: 5px;
+  color: #94a3b8;
+  font-size: 0.8rem;
+}
+
+.secao-sobre {
+  padding: 72px max(24px, calc((100vw - 1180px) / 2));
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 72px;
+  color: #334155;
+  background: #f8fafc;
 }
 
 .secao-sobre h2 {
-  color: #fff;
+  color: #111827;
 }
 
-.secao-sobre > p {
+.secao-sobre > div > p {
+  margin: 18px 0 0;
+  line-height: 1.75;
+}
+
+.numeros-campeonato {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: #cbd5e1;
+}
+
+.numeros-campeonato p {
+  min-height: 110px;
   margin: 0;
-  color: #dcc3cb;
-  line-height: 1.8;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #526176;
+  background: #eef2f6;
+  font-size: 0.78rem;
+  text-align: center;
 }
 
-.secao-sobre > a {
-  padding-bottom: 6px;
-  color: #f6c23e;
-  border-bottom: 1px solid rgba(246, 194, 62, 0.45);
-  font-weight: 800;
-  text-decoration: none;
-  white-space: nowrap;
+.numeros-campeonato strong {
+  color: #111827;
+  font-size: 2rem;
 }
 
-.secao-sobre > a:hover {
-  color: #fff;
-  border-color: #fff;
-}
-
-@media (max-width: 900px) {
+@media (max-width: 940px) {
   .hero {
     grid-template-columns: 1fr;
-    gap: 64px;
+    gap: 60px;
   }
 
-  .painel-hero {
-    min-height: 320px;
-  }
-
-  .grade-vagas {
+  .grade-partidas {
     grid-template-columns: 1fr;
+  }
+
+  .grade-equipes {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .secao-sobre {
     grid-template-columns: 1fr;
-    align-items: start;
-    gap: 26px;
+    gap: 36px;
   }
 }
 
-@media (max-width: 620px) {
+@media (max-width: 650px) {
   .hero {
     min-height: auto;
-    padding-top: 60px;
+    padding-top: 64px;
     padding-bottom: 72px;
   }
 
@@ -381,19 +425,36 @@ main {
     width: 100%;
   }
 
-  .painel-hero {
-    min-height: 300px;
-    padding: 30px;
-    box-shadow: 14px 14px 0 #f6c23e;
+  .proxima-partida {
+    padding: 28px 20px;
+    box-shadow: 10px 10px 0 #172033;
+  }
+
+  .confronto-destaque img {
+    width: 68px;
+    height: 68px;
+  }
+
+  .secao-partidas,
+  .secao-equipes {
+    padding-top: 68px;
+    padding-bottom: 68px;
   }
 
   .cabecalho-secao {
-    align-items: flex-start;
+    align-items: start;
     flex-direction: column;
   }
 
-  .secao-vagas {
-    padding-top: 70px;
-    padding-bottom: 70px;
+  .grade-equipes {
+    grid-template-columns: 1fr;
+  }
+
+  .numeros-campeonato {
+    grid-template-columns: 1fr;
+  }
+
+  .numeros-campeonato p {
+    min-height: 80px;
   }
 }

@@ -1,59 +1,61 @@
-# ProjetoVaguinha
+# Arena GG
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.21.
+## Aluno
 
-## Development server
+Eduardo dos Santos Iachinski Sotoriva
 
-To start a local development server, run:
+## Descrição
 
-```bash
-ng serve
-```
+O Arena GG é uma aplicação Angular para acompanhar um campeonato universitário de eSports. A página apresenta as equipes participantes, os confrontos, os resultados, a situação de cada partida e a classificação geral da competição.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Funcionalidades
 
-## Code scaffolding
+- Exibição dinâmica de equipes e partidas;
+- Identificação de partidas agendadas, ao vivo e encerradas;
+- Exibição de placares e resultados;
+- Filtro de partidas por situação;
+- Seleção de partidas para acompanhamento;
+- Visualização dos detalhes e mapas de cada confronto;
+- Registro fictício de palpites em partidas disponíveis;
+- Classificação geral das equipes;
+- Entrada e saída fictícia da área do torcedor;
+- Layout responsivo para computadores e dispositivos móveis.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Conteúdos Angular aplicados
 
-```bash
-ng generate component component-name
-```
+- Componentes para cabeçalho, cards de partidas, classificação e rodapé;
+- Interpolação para exibir textos, datas, placares e estatísticas;
+- Property Binding nas imagens, classes, atributos e estado dos botões;
+- Event Binding nos filtros e botões de interação;
+- Diretivas `@if`, `@else` e `@for` para controlar a interface;
+- Comunicação entre componentes com `@Input`, `@Output` e `EventEmitter`.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Tecnologias
 
-```bash
-ng generate --help
-```
+- Angular 21;
+- TypeScript;
+- HTML;
+- CSS;
+- Vitest.
 
-## Building
+## Como executar
 
-To build the project run:
+1. Clone este repositório.
+2. Abra um terminal na pasta do projeto.
+3. Execute `npm install`.
+4. Execute `npm start` ou `ng serve`.
+5. Acesse `http://localhost:4200` no navegador.
 
-```bash
-ng build
-```
+## Imagens da aplicação
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### Versão para computador
 
-## Running unit tests
+![Página inicial do Arena GG em um computador](docs/arena-gg.png)
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+### Versão responsiva
 
-```bash
-ng test
-```
+![Página inicial do Arena GG em uma tela reduzida](docs/arena-gg-mobile.png)
 
-## Running end-to-end tests
+## Vídeo
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+O link do vídeo explicativo no YouTube será adicionado após a gravação.
