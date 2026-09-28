@@ -58,4 +58,4 @@ O Arena GG é uma aplicação Angular para acompanhar um campeonato universitár
 
 ## Vídeo
 
-O link do vídeo explicativo no YouTube será adicionado após a gravação.
+https://youtu.be/ScfwuaxzJPA
